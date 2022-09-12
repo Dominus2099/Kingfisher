@@ -1,3 +1,7 @@
 Ramos Ramos
 bartolome is here, new programmer doms
+<<<<<<< HEAD
 IDK WTF is going on
+=======
+moreno
+>>>>>>> 911b5a258079f0711f67e03287c8a124b271824a

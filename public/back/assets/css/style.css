@@ -600,4 +600,13 @@ header .form-inline {
 .language-show + .dropdown-menu {
   display: block; }
 
+  .wrapper{
+    display: flex;
+  }
+
+  .wrapper .item{
+    width: 110px;
+    height: 110px;
+    line-height:110px;
+  }
 /*# sourceMappingURL=style.css.map */

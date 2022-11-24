@@ -205,7 +205,67 @@
         </div>
     </div>
 
+    
+    <section>
+        
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="mb-3">Articles</h3>
+                </div>
+                
+                        <div class="row">
+                                <div>
+                                    
+                                            @foreach ( $articledash as $articledashb )
+                                            <div class="col-4 align-items-center">
+                                            <div class="container-fluid py-2">
+                                                <div class="d-flex flex-row flex-nowrap">
+                                                    <div class="d-flex justify-content-evenly">
+                                        <div class="card">
+                                            <img class="img-fluid" src="{{ asset('/article') }}/{{ $articledashb->main_image }}">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center">{{ $articledashb->title }}</h2>
+                                                <p class="card-text">{{ $articledashb->short_description }}</p>
+                                                <p class="card-text">{!! $articledashb->description !!}</p>
+                                            </div>
+                                        </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>@endforeach 
+                                        
+                                </div>
+                               
+                            </div> 
+                            <div class=" text-center">
+                                        {{ $articledash->links() }}
+                                        </div>
+                </div>
+                        
+    </section>
 
+
+    @if(auth()->user()->is_admin)
+    @forelse($notifications as $notification)
+        <div class="alert alert-success" role="alert">
+            [{{ $notification->created_at }}] User {{ $notification->data['name'] }} ({{ $notification->data['email'] }}) has just registered.
+            <a href="#" class="float-right mark-as-read" data-id="{{ $notification->id }}">
+                Mark as read
+            </a>
+        </div>
+
+<<<<<<< Updated upstream
 </div>
 <!-- .content -->
+=======
+        @if($loop->last)
+            <a href="#" id="mark-all">
+                Mark all as read
+            </a>
+        @endif
+    @empty
+        There are no new notifications
+    @endforelse
+@endif
+>>>>>>> Stashed changes
 @endsection

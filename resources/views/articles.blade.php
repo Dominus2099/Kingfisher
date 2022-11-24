@@ -2,13 +2,20 @@
 @extends('layout.app')
 @section('content')
 
+<style>
+
+.d-md-flex {
+    display: flex!important;
+}
+</style>
+
 <div class="container">
 
 <div class="row">
 <div class="col-md-8">
     <div class="entity_wrapper">
     <div class="entity_title header_green">
-        <h1><a>Articles</a></h1>
+        <h1><a>Articles test</a></h1>
     </div>
     <!-- entity_title -->
     @foreach($articles as $key=>$article)
@@ -39,29 +46,29 @@
     @else
     @if($key === 1)
     @endif
-    <div class="col-md-6">
-        <div class="category_article_body"> 
-            <div class="top_article_img">
+    <div class="col-md-9" data-aos="fade-up">
+        
+            <div class="d-md-flex post-entry-2 half" class="me-4 thumbnail">
                 <a href="{{ url('/content') }}/{{ $article->slug }}">
                     <img class="img-fluid" src="{{ asset('/article') }}/{{ $article->thumb_image }}" alt="{{ $article->title }} image">
                 </a>
             </div>
             <!-- top_article_img -->
 
-            <div class="category_article_title">
+            
                 <h5><a href="{{ url('/content') }}/{{ $article->slug }}">{{ str_limit($article->title, 25, '...') }}</a></h5>
-            </div>
+            
             <!-- category_article_title -->
 
-            <div class="article_date">
+            
                 <a>{{ date('F j Y', strtotime($article->created_at)) }}</a>, by: <a>{{ $article->creator->name }}</a>
-            </div>
+            
             <!-- article_date -->
 
-            <div class="category_article_content">{{ str_limit($article->short_description, 200, '...') }}</div>
+            
             <!-- category_article_content -->
 
-        </div>
+        
         <!-- category_article_body -->
         <hr>
     </div>

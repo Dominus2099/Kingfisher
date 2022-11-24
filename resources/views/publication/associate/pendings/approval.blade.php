@@ -1,6 +1,14 @@
 @extends('publication.associate.layout.app')
 @section('content')
 
+<style>
+
+    .progress {
+        height: 35px;
+    }
+
+    </style>
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -8,8 +16,16 @@
                 <strong class="card-title">Continue Work</strong>
             </div>
             <div class="card-body">
+
                 <div id="pay-invoice">
                     <div class="card-body">
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                              <h3>Associate</h3>
+                            </div>
+                          </div>
+                          <br>
                         <div class="card-title">
                             <h3 class="text-center">Article</h3>
                         </div>

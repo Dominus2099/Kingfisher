@@ -9,11 +9,18 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SettingController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\CommentPageController;
 use App\Http\Controllers\ContentPageController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\NewsPageController;//Articles
 use App\Http\Controllers\ProfileController;
+=======
+use App\Http\Controllers\Auth\TermsConditionController;
+use App\Http\Controllers\ProfileChangePasswordController;
+use App\Http\Controllers\Admin\CompileController;
+//publication side
+>>>>>>> Stashed changes
 use App\Http\Controllers\Publication\Associate\DashboardController as AssociateDashboardController;
 use App\Http\Controllers\Publication\Associate\PendingController as AssociatePendingController;
 use App\Http\Controllers\Publication\Copy\DashboardController as CopyDashboardController;
@@ -62,8 +69,15 @@ Route::group(['prefix'=>'', 'middleware'=>'auth'], function(){
 });
 
 //ADMIN SIDE
+<<<<<<< Updated upstream
 Route::group(['prefix'=>'/admin', 'middleware'=>'auth'], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');  
+=======
+Route::prefix('admin')->middleware(['auth', 'isAdmin', 'verified'])->group(function(){
+    Route::get('/', [DashboardController::class, 'index',])->name('dashboard');
+
+    Route::get('/compile', [CompileController::class, 'index',])->name('compile');   
+>>>>>>> Stashed changes
     
     Route::get('/authors', [AuthorController::class, 'index'])->name('authors');
     Route::get('/authors/create', [AuthorController::class, 'create']);

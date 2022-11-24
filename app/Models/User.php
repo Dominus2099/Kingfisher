@@ -49,4 +49,14 @@ class User extends Authenticatable implements Auditable
     public function comment(){
         return $this->hasMany(Comment::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->roles()->where('id', 1)->exists();
+    }
 }

@@ -5,6 +5,9 @@
 <script src="{{ asset('back/assets/js/lib/chosen/chosen.jquery.js') }}">
 <link rel="stylesheet" href="{{ asset('back/assets/css/lib/chosen/chosen.min.css') }}">
 <link rel="stylesheet" href="{{ asset('back/assets/css/lib/chosen/chosen.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <script>
     jQuery (document).ready(function(){
@@ -16,6 +19,8 @@
     });
 </script>
 
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -25,6 +30,11 @@
             <div class="card-body">
                 <div id="pay-invoice">
                     <div class="card-body">
+
+                   
+
+                        
+
                         <div class="card-title">
                             <h3 class="text-center">Article</h3>
                         </div>

@@ -29,9 +29,15 @@
 
     <div class="media">
         @forelse ($comments as $comment)
+<<<<<<< Updated upstream
         <div class="media-body">
             <h2 class="media-heading">{{ $comment->name }}</h2>
             <span class="media-date"><a>{{ date('F, j Y', strtotime($comment->updated_at)) }}</a>
+=======
+        <div class="media-body ">
+            <h2 class="media-heading">{{ $comment->name }}</h2>
+            <span class="media-date"><p>{{ date('F, j Y', strtotime($comment->updated_at)) }}</p>
+>>>>>>> Stashed changes
                 <br>
                 </span>
             {{ $comment->comment }}

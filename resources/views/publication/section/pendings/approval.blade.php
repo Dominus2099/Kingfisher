@@ -1,6 +1,14 @@
 @extends('publication.section.layout.app')
 @section('content')
 
+<style>
+
+    .progress {
+        height: 35px;
+    }
+
+    </style>
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -10,6 +18,13 @@
             <div class="card-body">
                 <div id="pay-invoice">
                     <div class="card-body">
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                              <h3>Section</h3>
+                            </div>
+                          </div>
+                          <br>
                         <div class="card-title">
                             <h3 class="text-center">Article Content</h3>
                         </div>
